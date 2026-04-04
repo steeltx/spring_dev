@@ -1,0 +1,42 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*:after, *:before{
+    box-sizing: inherit;
+}
+
+.square-blue{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(17, 101, 197);
+    padding: 50px;
+    /* border: 5px solid black; */
+    display: inline-block;
+}
+
+.square-green{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: rgb(84,143,13);
+    padding: 30px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    padding-left: 1rem;
+}
+ 

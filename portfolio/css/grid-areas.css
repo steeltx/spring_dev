@@ -1,0 +1,90 @@
+:root{
+    --color-nav: #ba0f18;
+    --color-header: #7c0f49;
+    --color-main: #724563;
+    --color-aside: #7000ac;
+    --color-footer: #652500;
+}
+
+body{
+    color: white
+}
+
+.grid-main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 10rem 20rem 45rem 20rem 15rem;
+    grid-template-areas: "nav nav nav"
+                        "header header header"
+                        "main main main"
+                        "aside aside aside"
+                        "footer footer footer"
+    ;
+    gap: 1rem;
+    height: 110rem;
+}
+
+@media(min-width: 480px){
+    .grid-main{
+        grid-template-rows: 10rem 20rem 65rem 15rem;
+        grid-template-areas: "nav nav nav"
+                        "header header aside"
+                        "main main aside"
+                        "footer footer footer"
+        ;
+    }
+    .header img:hover, .main img:hover, .aside img:hover, .footer img:hover{
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+    }
+}
+
+.nav{
+    grid-area: nav;
+    background-color: var(--color-nav);
+}
+
+.nav h2{
+    padding-left: 1rem;
+}
+
+.header{
+    grid-area: header;
+    background-color: var(--color-header);
+    overflow: hidden;
+    position: relative;
+}
+
+.header h2, .main h1, .aside h2, .footer h2{
+    position: absolute;
+    left: 1rem;
+    z-index: 1;
+}
+
+.header img, .main img, .aside img, .footer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main{
+    grid-area: main;
+    background-color: var(--color-main);
+    overflow: hidden;
+    position: relative;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: var(--color-aside);
+    overflow: hidden;
+    position: relative;
+}
+
+
+.footer{
+    grid-area: footer;
+    background-color: var(--color-footer);
+    overflow: hidden;
+    position: relative;
+}

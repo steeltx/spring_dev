@@ -1,0 +1,30 @@
+body {
+    background-color: #fbd7b1;
+}
+
+.square{
+    background-color: #c92469;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dad{
+    background-color: #f6ae64;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 20px;
+    left: 100px;
+    display: inline-block;
+}
+
+.sticky{
+    position: sticky;
+    background-color: black;
+    color: white;
+    top: 0;
+}
