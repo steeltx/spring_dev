@@ -63,7 +63,7 @@ public class PersonalRepositoryImpl implements IPersonalInfoRepository{
             }, keyHolder);
             personalInfo.setId(Objects.requireNonNull(keyHolder.getKey()).longValue());
         }else{
-            String sql = "UPDATE INTO personal_info SET first_name=?, last_name=?, title=?, profile_description=?, " +
+            String sql = "UPDATE personal_info SET first_name=?, last_name=?, title=?, profile_description=?, " +
                     "profile_image_url=?, years_of_experience=?, email=?, phone=?, linkedin_url=?, github_url=? " +
                     "WHERE id=?";
             jdbcTemplate.update(sql,
