@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario de información personal</h1>
+    <form th:action="@{/personal-info-save}" th:object="${personalInfo}" method="post">
+        <div>
+            <label for="firstName">Nombre: </label>
+            <input type="text" id="firstName" th:field="*{firstName}">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" th:field="*{email}">
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

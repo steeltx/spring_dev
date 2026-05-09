@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error de validaciones</title>
+    <h1>Algo salio mal</h1>
+    <p th:text="${message}"></p>
+    <ul>
+        <li th:each="error : ${errors}" th:text="${error.defaultMessage}"></li>
+    </ul>
+    <a href="/form">Volver al inicio</a>
+</head>
+<body>
+
+</body>
+</html>
