@@ -80,7 +80,7 @@ public class PersonalRepositoryImpl implements IPersonalInfoRepository{
                     personalInfo.getId()
             );
         }
-        return null;
+        return personalInfo;
     }
 
 //    @Override
