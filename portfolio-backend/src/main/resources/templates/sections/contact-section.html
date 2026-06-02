@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <section id="contact" th:fragment="contact">
+        <h2>Contacto</h2>
+        <form class="contact-form">
+            <input name="name" type="text" placeholder="Nombre" required>
+            <input name="email" type="email" placeholder="Correo" required>
+            <textarea name="message" placeholder="Mensaje" rows="6" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
+</body>
+</html>
