@@ -12,7 +12,9 @@
             <img th:src="${personalInfo.profileImageUrl}" th:alt="${personalInfo.firstName}" class="profile-picture">
         </div>
         <p th:text="${personalInfo.profileDescription}"></p>
-        <button>Mis proyectos</button>
+        <a href="#projects">
+            <button>Mis proyectos</button>
+        </a>
     </div>
 </body>
 </html>

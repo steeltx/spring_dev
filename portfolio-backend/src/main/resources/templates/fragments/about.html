@@ -9,7 +9,9 @@
     <section id="about" th:fragment="about">
         <h2>Quien soy yo</h2>
         <p th:text="${personalInfo.profileDescription}"></p>
-        <button>Mostrar mis proyectos</button>
+        <a href="#projects">
+            <button>Mostrar mis proyectos</button>
+        </a>
     </section>
 </body>
 </html>

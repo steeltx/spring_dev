@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-form-project.css">
     <title>Formulario proyecto</title>
 </head>
 <body>
-    <h1>Formulario de proyecto</h1>
-    <form th:action="@{/projects/save}" th:object="${projectDto}" method="post" enctype="multipart/form-data">
-        <div>
-            <label for="title">Titulo: </label>
-            <input type="text" id="title" th:field="*{title}" required>
+    <header>
+        <div class="container">
+            <div th:insert="fragments/nav :: nav"></div>
         </div>
-        <div>
-            <label for="description">Descripción:</label>
-            <textarea id="description" th:field="*{description}"></textarea>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="contact">
+                <h2>Formulario de proyecto</h2>
+                <form class="contact-form" th:action="@{/projects/save}" th:object="${projectDto}" method="post" enctype="multipart/form-data">
+                    <input type="text" id="title" th:field="*{title}" placeholder="Titulo">
+                    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></div>
+
+                    <textarea id="description" th:field="*{description}" rows="6" placeholder="Descripción"></textarea>
+                    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></div>
+
+                    <input type="url" id="projectUrl" th:field="*{projectUrl}" placeholder="URL del proyecto">
+                    <div th:if="${#fields.hasErrors('projectUrl')}" th:errors="*{projectUrl}" class="error-message"></div>
+
+                    <label>Imagen del proyecto</label>
+                    <input type="file" name="file" id="file">
+                    <div th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}" class="error-message"></div>
+
+                    <input type="number" id="personalInfoId" th:field="*{personalInfoId}" placeholder="ID Información personal">
+                    <div th:if="${#fields.hasErrors('personalInfoId')}" th:errors="*{personalInfoId}" class="error-message"></div>
+
+                    <button type="submit">Guardar</button>
+                </form>
+            </section>
         </div>
-        <div>
-            <label for="projectUrl">Url del proyecto</label>
-            <input type="url" id="projectUrl" th:field="*{projectUrl}">
-        </div>
-        <div>
-            <label for="file">Imagen del proyecto</label>
-            <input type="file" name="file" id="file" required>
-        </div>
-        <div>
-            <label for="personalInfoId">ID información Personal</label>
-            <input type="number" id="personalInfoId" th:field="*{personalInfoId}" required>
-        </div>
-        <button type="submit">Guardar</button>
-    </form>
+    </main>
+
+    <div th:insert="fragments/footer :: footer"></div>
 </body>
 </html>

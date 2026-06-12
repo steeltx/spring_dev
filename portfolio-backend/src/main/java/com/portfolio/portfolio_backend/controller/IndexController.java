@@ -1,9 +1,6 @@
 package com.portfolio.portfolio_backend.controller;
 
-import com.portfolio.portfolio_backend.service.IEducationService;
-import com.portfolio.portfolio_backend.service.IExperienceService;
-import com.portfolio.portfolio_backend.service.IPersonalInfoService;
-import com.portfolio.portfolio_backend.service.ISkillService;
+import com.portfolio.portfolio_backend.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +14,7 @@ public class IndexController {
     private final IEducationService educationService;
     private final ISkillService skillService;
     private final IExperienceService experienceService;
+    private final IProjectService projectService;
 
     @GetMapping("/")
     public String showIndex(Model model){
@@ -25,6 +23,7 @@ public class IndexController {
         model.addAttribute("experience", experienceService.findAll());
         model.addAttribute("education", educationService.findAll());
         model.addAttribute("skills", skillService.findAll());
+        model.addAttribute("projects", projectService.findAll());
         return "index";
     }
 
