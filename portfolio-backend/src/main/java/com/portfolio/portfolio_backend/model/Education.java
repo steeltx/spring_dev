@@ -25,6 +25,6 @@ public class Education {
     private LocalDate endDate;
     @NotBlank(message = "La descripcion no puede estar vacia")
     private String description;
-    // validacion a nivel de servici
+    // validacion a nivel de servicio
     private Long personalInfoId;
 }

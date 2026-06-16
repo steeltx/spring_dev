@@ -25,16 +25,6 @@ body{
     background-color: #f4f4f4; /* Un fondo suave para la página */
 }
 
-/* Estilos para las secciones principales */
-main section {
-    padding: 40px 0; /* Espaciado interno para las secciones */
-    border-bottom: 1px solid #ddd; /* Separador entre secciones */
-}
-
-main section:last-child {
-    border-bottom: none; /* Quitar el borde de la última sección */
-}
-
 main h2 {
     font-size: 2rem;
     text-align: center;

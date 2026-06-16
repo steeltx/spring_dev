@@ -331,3 +331,8 @@ footer {
     background-color: var(--color-dark);
     color: var(--color-primary-gold);
 }
+
+.line-white {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
