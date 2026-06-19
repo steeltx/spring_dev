@@ -25,6 +25,7 @@ public class EducationRepositoryImpl implements IEducationRepository {
         Education education = new Education();
         education.setId(rs.getLong("id"));
         education.setDegree(rs.getString("degree"));
+        education.setInstitution(rs.getString("institution"));
         education.setStartDate(rs.getObject("start_date",LocalDate.class));
         education.setEndDate(rs.getObject("end_date", LocalDate.class));
         education.setDescription(rs.getString("description"));

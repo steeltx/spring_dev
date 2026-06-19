@@ -1,7 +1,7 @@
 package com.portfolio.portfolio_backend.controller;
 
 import com.portfolio.portfolio_backend.dto.ProjectDto;
-import com.portfolio.portfolio_backend.dto.ProjectMapper;
+import com.portfolio.portfolio_backend.mapper.ProjectMapper;
 import com.portfolio.portfolio_backend.model.Project;
 import com.portfolio.portfolio_backend.service.FileStorageService;
 import com.portfolio.portfolio_backend.service.IProjectService;

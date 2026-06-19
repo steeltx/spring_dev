@@ -1,5 +1,6 @@
-package com.portfolio.portfolio_backend.dto;
+package com.portfolio.portfolio_backend.mapper;
 
+import com.portfolio.portfolio_backend.dto.SkillDto;
 import com.portfolio.portfolio_backend.model.Skill;
 
 public class SkillMapper {
