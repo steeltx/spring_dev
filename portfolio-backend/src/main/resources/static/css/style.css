@@ -11,7 +11,6 @@ header {
     background-size: cover;
     background-position: center;
     position: relative; 
-    overflow: hidden; 
 }
 
 .profile-image-container {
@@ -86,6 +85,14 @@ header nav ul li a:hover {
 /* Sección "WHO AM I ?" */
 main .container {
     background-color: var(--color-dark);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.admin-section {
+    flex-grow: 1;
 }
 
 #about {
