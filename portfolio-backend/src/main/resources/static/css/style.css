@@ -393,3 +393,16 @@ footer {
 .btn-delete:hover {
     background-color: #da190b; /* Un rojo más oscuro al pasar el ratón */
 }
+
+@media (max-width: 768px){
+
+    header nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li{
+        margin: 10px 0;
+    }
+
+}
