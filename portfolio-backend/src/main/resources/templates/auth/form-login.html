@@ -10,6 +10,14 @@
 <main class="login-page">
     <section class="login-container">
         <h1>Iniciar Sesión</h1>
+
+        <div th:if="${error}" class="error-message" role="alert">
+            <span th:text="${error}"></span>
+        </div>
+        <div th:if="${message}" class="alert alert-success" role="alert">
+            <span th:text="${message}"></span>
+        </div>
+        
         <form th:action="@{/login}" method="post" class="login-form">
             <div class="form-group">
                 <label for="username">Usuario</label>
