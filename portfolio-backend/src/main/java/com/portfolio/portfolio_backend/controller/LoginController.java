@@ -10,13 +10,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
     
     @GetMapping("/login")
-    public String showLoginForm(@RequestParam(value = "error", required = false) String error, Model model,
+    public String showLoginForm(@RequestParam(value = "error", required = false) String error, 
+                                @RequestParam(value = "logout", required = false) String logout,
+                                Model model,
                                 Authentication authentication){
         if(authentication != null){
            return "redirect:/education"; 
         }
         if(error != null){
             model.addAttribute("error","Datos incorrectos");
+        }
+        if(logout != null){
+            model.addAttribute("message","Sesión cerrada correctamente");
         }
         return "auth/form-login";
     }

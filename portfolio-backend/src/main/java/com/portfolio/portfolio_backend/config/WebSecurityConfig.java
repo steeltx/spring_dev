@@ -34,13 +34,14 @@ public class WebSecurityConfig {
             .requestMatchers("/projects/new-project", "/projects/save").authenticated()
             .anyRequest().permitAll())
             .formLogin(form -> 
-                form.loginPage("/login").permitAll())
-            .logout(logout -> logout.logoutUrl("/logout")
-                .logoutRequestMatcher(request -> "GET".equalsIgnoreCase(request.getMethod()) && "/logout".equals(request.getRequestURI()))
+                form.loginPage("/login").defaultSuccessUrl("/education", true).permitAll())
+            .logout(logout -> logout
+                .logoutUrl("/logout")
                 .logoutSuccessUrl("/login?logout")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
-                .permitAll());
+                .permitAll()
+            );
         return http.build();
     }
 
