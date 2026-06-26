@@ -1,4 +1,4 @@
-package com.gestion.eventos.api.config.jwt;
+package com.gestion.eventos.api.security.jwt;
 
 import java.io.IOException;
 

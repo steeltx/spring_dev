@@ -1,7 +1,4 @@
-package com.gestion.eventos.api.controller;
-
-import java.util.Collection;
-import java.util.Collections;
+package com.gestion.eventos.api.security.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gestion.eventos.api.config.jwt.JwtGenerator;
-import com.gestion.eventos.api.domain.Role;
+import com.gestion.eventos.api.security.jwt.JwtGenerator;
 import com.gestion.eventos.api.domain.User;
-import com.gestion.eventos.api.dto.JwtAuthResponseDto;
-import com.gestion.eventos.api.dto.LoginDto;
-import com.gestion.eventos.api.dto.RegisterDto;
+import com.gestion.eventos.api.security.dto.JwtAuthResponseDto;
+import com.gestion.eventos.api.security.dto.LoginDto;
+import com.gestion.eventos.api.security.dto.RegisterDto;
 import com.gestion.eventos.api.mapper.UserMapper;
-import com.gestion.eventos.api.repository.RoleRepository;
 import com.gestion.eventos.api.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -35,7 +30,6 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtGenerator jwtGenerator;
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
 
@@ -59,9 +53,6 @@ public class AuthController {
         }
         User user = userMapper.registerDtoToUser(registerDto);
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
-        Role roles = roleRepository.findByName("ROLE_USER")
-            .orElseThrow(() -> new RuntimeException("Error, el rol del usuario no existe"));
-        user.setRoles(Collections.singleton(roles));
         userRepository.save(user);
         return new ResponseEntity<>("Usuario registrado", HttpStatus.CREATED);
     }
